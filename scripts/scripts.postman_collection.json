@@ -1,0 +1,284 @@
+{
+	"info": {
+		"name": "scripts",
+		"_postman_id": "4ee5ab29-df0d-49fe-eb9f-155522fc743d",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "place order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"listOfVideos\" : \n\t\t[ \n\t\t\t{\n\t\t\t\t\"videoTitle\" : \"Matrix 11\",\n\t\t\t\t\"daysToRent\" : 1\n\t\t\t}, \n\t\t\t{\n\t\t\t\t\"videoTitle\" : \"Spider Man\",\n\t\t\t\t\"daysToRent\" : 5\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"videoTitle\" : \"Spider Man 2\",\n\t\t\t\t\"daysToRent\" : 2\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"videoTitle\" : \"Out of Africa\",\n\t\t\t\t\"daysToRent\" : 7\n\t\t\t}\n\t\t],\n\t\"customerId\" : 1,\n\t\"currencyCode\" : \"SEK\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8088/videoRentalStore/placeOrder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"videoRentalStore",
+						"placeOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "return order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"orderId\" : 1,\n\t\"listOfVideos\" : \n\t\t[ \n\t\t\t{\n\t\t\t\t\"videoTitle\" : \"Matrix 11\",\n\t\t\t\t\"daysDelayed\" : 2\n\t\t\t}, \n\t\t\t{\n\t\t\t\t\"videoTitle\" : \"Spider Man\",\n\t\t\t\t\"daysDelayed\" : 1\n\t\t\t}\n\t\t],\n\t\"currencyCode\" : \"SEK\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8088/videoRentalStore/returnOrder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"videoRentalStore",
+						"returnOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get videos by order id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8088/videoRentalStore/getVideosByOrder/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"videoRentalStore",
+						"getVideosByOrder",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get orders by customer id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8088/videoRentalStore/customer/getOrdersByCustomer/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"videoRentalStore",
+						"customer",
+						"getOrdersByCustomer",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get bonus points by customer id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8088/videoRentalStore/customer/getBonusPointsByCustomer/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"videoRentalStore",
+						"customer",
+						"getBonusPointsByCustomer",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add new customer or return existing",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8088/videoRentalStore/customer/addNewCustomerOrReturnExisting/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"videoRentalStore",
+						"customer",
+						"addNewCustomerOrReturnExisting",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add new video",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\" : \"Terminator 2\",\n\t\"videoType\" : \"Old film\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8088/videoRentalStore/video/addNewVideo/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"videoRentalStore",
+						"video",
+						"addNewVideo",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get inventory list of all videos",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8088/videoRentalStore/video/getAllVideos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"videoRentalStore",
+						"video",
+						"getAllVideos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
