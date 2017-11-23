@@ -70,7 +70,7 @@ All the endpoints work using an ID which is found in the URL except from the fol
 	"currencyCode" : "SEK"
 }
 ```
-	- A list of videos is passed, as well as a customer ID and the currency code. If this customer does not exist, then a new 	customer is created and this order is placed on his account, with the bonus points included. If the customer exists then his 	bonus points and orders are updated.
+- A list of videos is passed, as well as a customer ID and the currency code. If this customer does not exist, then a new 	customer is created and this order is placed on his account, with the bonus points included. If the customer exists then his 	bonus points and orders are updated.
 
 
 * POST    /returnOrder
@@ -91,7 +91,7 @@ All the endpoints work using an ID which is found in the URL except from the fol
 	"currencyCode" : "SEK"
 }
 ```
-	- The order ID and the list of the delayed videos is passed, and if this video does not belong to the specified order, then an 	error message is returned. Also the currency code is passed.
+- The order ID and the list of the delayed videos is passed, and if this video does not belong to the specified order, then an error message is returned. Also the currency code is passed.
 
 
 * POST    /video/addNewVideo
@@ -101,8 +101,8 @@ All the endpoints work using an ID which is found in the URL except from the fol
 	"videoType" : "Old film"
 }
 ```
-	- The video title and the type of video is passed to this endpoint. If it is duplicated, an error message is returned.
-	Otherwise, a successful creation message is returned in plain text.
+- The video title and the type of video is passed to this endpoint. If it is duplicated, an error message is returned.
+Otherwise, a successful creation message is returned in plain text.
 
 
 ### Notes
