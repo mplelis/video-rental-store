@@ -1,9 +1,39 @@
 # Video Rental Store
-# Author : Mihalis Plelis
-# Version : 1.1
+### Author : Mihalis Plelis
+### Version : 1.1
 
 The Video Rental Store Service will allow customers to rent and return movies, and also it keeps
 track of their bonus points.
+
+### Functionality Description
+
+* Price calculations  
+	The price of rentals is based type of film rented and how many days the film is rented
+	for. The customers say when renting for how many days they want to rent for and pay up
+	front. If the film is returned late, then rent for the extra days is charged when returning.
+	
+	The store has three types of films.  
+		1. New releases – Price is <premium price> times number of days rented.  
+		2. Regular films – Price is <basic price> for the first 3 days and then <basic price>
+		times the number of days over 3.  
+		3. Old film - Price is <basic price> for the first 5 days and then <basic price> times
+		the number of days over 5  
+		
+		- <premium price> is 40 SEK  
+		- <basic price> is 30 SEK  
+		
+* Bonus calculations  
+	Customers get bonus points when renting films. A new release gives 2 points and other
+	films give one point per rental (regardless of the time rented).  
+
+* The API exposes operations for  
+	1. Renting one or several films and calculates the price.  
+	2. Returns films and calculates possible surcharges.  
+	3. Creates new customer.  
+	4. Returns the bonus points per customer ID.  
+	5. Returns orders by customer ID.  
+	6. Returns a list of all videos.  
+	7. Adds new video.  
 
 ### Getting Started
 * Make sure you have installed maven in the machine that this project will run.
