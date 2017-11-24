@@ -12,11 +12,11 @@ track of their bonus points.
 	for. The customers say when renting for how many days they want to rent for and pay up
 	front. If the film is returned late, then rent for the extra days is charged when returning.
 	
-	- 	Prices  
+	- 	Prices
 		1. <premium price> is 40 SEK  
 		2. <basic price> is 30 SEK  
 	
-	- The store has three types of films.  
+	- The store has three types of films.
 		1. New releases – Price is <premium price> times number of days rented.  
 		2. Regular films – Price is <basic price> for the first 3 days and then <basic price>
 		times the number of days over 3.  
@@ -27,7 +27,7 @@ track of their bonus points.
 	Customers get bonus points when renting films. A new release gives 2 points and other
 	films give one point per rental (regardless of the time rented).  
 
-* The API exposes operations for  
+* The API exposes operations for
 	1. Renting one or several films and calculates the price.  
 	2. Returns films and calculates possible surcharges.  
 	3. Creates new customer.  
