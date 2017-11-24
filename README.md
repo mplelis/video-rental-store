@@ -57,16 +57,18 @@ track of their bonus points.
 4.  Now you should be able to run the application in your IDE and see in the console it is running on port 8088.
 	The port 8088 was chosen, to avoid possible conflicts with other running applications which use this port.
 
-5.	The following resources have been registered which can be accessed with the pre-fix *http://localhost:8088*:
+### Exposed endpoints
 
-	* POST    /customer/addNewCustomerOrReturnExisting/{customerId}  
-	* GET     /customer/getBonusPointsByCustomer/{customerId}  
-	* GET     /customer/getOrdersByCustomer/{customerId}  
-	* GET     /getVideosByOrder/{orderId}  
-	* POST    /placeOrder  
-	* POST    /returnOrder  
-	* POST    /video/addNewVideo  
-	* GET     /video/getAllVideos  
+*	The following resources have been registered which can be accessed with the pre-fix *http://localhost:8088*:
+
+	- POST    /customer/addNewCustomerOrReturnExisting/{customerId}  
+	- GET     /customer/getBonusPointsByCustomer/{customerId}  
+	- GET     /customer/getOrdersByCustomer/{customerId}  
+	- GET     /getVideosByOrder/{orderId}  
+	- POST    /placeOrder  
+	- POST    /returnOrder  
+	- POST    /video/addNewVideo  
+	- GET     /video/getAllVideos  
     
     Those resources can be accessed by the application Postman. It can be downloaded at https://www.getpostman.com/
     - A Postman collection has been attached to this project. It can be found under the path /scripts/scripts.postman_collection.json
