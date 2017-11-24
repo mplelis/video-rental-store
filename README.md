@@ -12,15 +12,16 @@ track of their bonus points.
 	for. The customers say when renting for how many days they want to rent for and pay up
 	front. If the film is returned late, then rent for the extra days is charged when returning.
 	
-	The store has three types of films.  
+	- 	Prices  
+		1. <premium price> is 40 SEK  
+		2. <basic price> is 30 SEK  
+	
+	- The store has three types of films.  
 		1. New releases – Price is <premium price> times number of days rented.  
 		2. Regular films – Price is <basic price> for the first 3 days and then <basic price>
 		times the number of days over 3.  
 		3. Old film - Price is <basic price> for the first 5 days and then <basic price> times
 		the number of days over 5  
-		
-		<premium price> is 40 SEK  
-		<basic price> is 30 SEK  
 		
 * Bonus calculations  
 	Customers get bonus points when renting films. A new release gives 2 points and other
