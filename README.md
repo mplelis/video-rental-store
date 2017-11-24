@@ -19,8 +19,8 @@ track of their bonus points.
 		3. Old film - Price is <basic price> for the first 5 days and then <basic price> times
 		the number of days over 5  
 		
-		- <premium price> is 40 SEK  
-		- <basic price> is 30 SEK  
+		<premium price> is 40 SEK  
+		<basic price> is 30 SEK  
 		
 * Bonus calculations  
 	Customers get bonus points when renting films. A new release gives 2 points and other
