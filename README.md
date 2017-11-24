@@ -28,13 +28,13 @@ track of their bonus points.
 	films give one point per rental (regardless of the time rented).  
 
 * The API exposes operations for
-	1. Renting one or several films and calculates the price.  
-	2. Returns films and calculates possible surcharges.  
-	3. Creates new customer.  
-	4. Returns the bonus points per customer ID.  
-	5. Returns orders by customer ID.  
-	6. Returns a list of all videos.  
-	7. Adds new video.  
+	- Renting one or several films and calculates the price.  
+	- Returns films and calculates possible surcharges.  
+	- Creates new customer.  
+	- Returns the bonus points per customer ID.  
+	- Returns orders by customer ID.  
+	- Returns a list of all videos.  
+	- Adds new video.  
 
 ### Getting Started
 * Make sure you have installed maven in the machine that this project will run.
