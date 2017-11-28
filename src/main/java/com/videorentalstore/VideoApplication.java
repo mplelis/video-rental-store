@@ -1,11 +1,8 @@
 package com.videorentalstore;
 
-import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 
 import org.flywaydb.core.Flyway;
-import org.h2.tools.Server;
 import org.skife.jdbi.v2.DBI;
 
 import com.videorentalstore.configuration.VideoApplicationConfiguration;
@@ -68,13 +65,6 @@ public class VideoApplication extends Application<VideoApplicationConfiguration>
 		environment.jersey().register(videoResources);
 		environment.jersey().register(new VideoApplicationExceptionMapper());
 
-		// H2 web server is started to give us the ability to connect to the
-		// database externally.
-		Server server = Server.createTcpServer().start();
-		VideoLogging.logMessage("The database server has started and the connection is open.");
-		String databaseUrl = getDatabaseURL(configuration, server);
-		VideoLogging.logMessage(databaseUrl);
-
 		Flyway flyway = new Flyway();
 		flyway.setDataSource(dataSourceFactory.build(environment.metrics(), "h2"));
 		flyway.setLocations("classpath:db/migration/h2", "classpath:dev_sql");
@@ -88,23 +78,5 @@ public class VideoApplication extends Application<VideoApplicationConfiguration>
 			VideoType.videoTypes.put(key, videoType);
 		}
 		VideoLogging.logMessage("Video Types have been successfully loaded into the Map.");
-	}
-
-	private String getDatabaseURL(VideoApplicationConfiguration configuration, Server server) {
-		String[] databaseUrlArray = configuration.getH2DataSourceFactory().getUrl().split(":");
-		List<String> databaseUrlList = Arrays.asList(databaseUrlArray);
-		StringBuilder databaseUrl = new StringBuilder();
-		databaseUrl.append(
-				"Database URL: " + databaseUrlList.get(0) + ":" + databaseUrlList.get(1) + ":" + server.getURL() + "/");
-		
-		Iterator<String> iterator = databaseUrlList.subList(2, databaseUrlList.size()).iterator();
-		while (iterator.hasNext()) {
-			databaseUrl.append(iterator.next());
-			if (iterator.hasNext()) {
-				databaseUrl.append(":");
-			}
-		}
-		
-		return databaseUrl.toString();
 	}
 }
