@@ -13,8 +13,8 @@ track of their bonus points.
 	front. If the film is returned late, then rent for the extra days is charged when returning.
 	
 	- 	Prices
-		1. <premium price> is 40 SEK  
-		2. <basic price> is 30 SEK  
+		1. *premium price* is 40 SEK  
+		2. *basic price* is 30 SEK  
 	
 	- The store has three types of films.
 		1. New releases – Price is <premium price> times number of days rented.  
