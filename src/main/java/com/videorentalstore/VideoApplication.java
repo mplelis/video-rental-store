@@ -45,9 +45,9 @@ public class VideoApplication extends Application<VideoApplicationConfiguration>
 		VideoLogging.logMessage("Application is starting...");
 
 		final DBIFactory factory = new DBIFactory();
-		DataSourceFactory dataSourceFactory = configuration.getH2DataSourceFactory();
+		DataSourceFactory dataSourceFactory = configuration.getPostgresDataSourceFactory();
 
-		jdbi = factory.build(environment, dataSourceFactory, "h2");
+		jdbi = factory.build(environment, dataSourceFactory, "postgres");
 		VideoLogging.logMessage("Database connection has been established.");
 
 		orderRepository = jdbi.onDemand(OrderRepository.class);
@@ -66,8 +66,8 @@ public class VideoApplication extends Application<VideoApplicationConfiguration>
 		environment.jersey().register(new VideoApplicationExceptionMapper());
 
 		Flyway flyway = new Flyway();
-		flyway.setDataSource(dataSourceFactory.build(environment.metrics(), "h2"));
-		flyway.setLocations("classpath:db/migration/h2", "classpath:dev_sql");
+		flyway.setDataSource(dataSourceFactory.build(environment.metrics(), "postgres"));
+		flyway.setLocations(configuration.getFlywayLocations());
 		flyway.migrate();
 		VideoLogging.logMessage("Database Migration has been successful.");
 

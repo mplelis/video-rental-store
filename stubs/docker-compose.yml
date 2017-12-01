@@ -1,0 +1,9 @@
+version: '2'
+services:
+ postgres:
+  build:
+   context: ./postgres
+  image: postgres:latest
+  container_name: local-postgres
+  ports:
+  - "5432:5432"

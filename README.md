@@ -140,14 +140,14 @@ Otherwise, a successful creation message is returned in plain text.
 
 ### Notes
 
-- The application will run Flyway Migrate on startup and execute the sql statements that can be found in the paths 
-	**/src/main/resources/db/migration/h2** and **/src/main/resources/dev_sql** for the initialization of the database.
-	Also the path **/src/main/resources/dev_sql** contains a script for the initialization of the test data.
-- A server is started for the database when the application starts, which allows connection from external database clients 
-  	to it, in order to verify data or manipulate it during runtime. *DBeaver* is an application which can connect to the 
-  	database. The database URL is printed in the console when the application starts and it has the following structure.  
-  	Example : *jdbc:h2:tcp://192.168.99.1:9092/mem:test*  
-  	By using the aforementioned URL and username *sa* with empty password, you can establish connection to the database.
-- When the requests contain malformed JSON input or wrong values, the relevant errors will be returned.
-- The responses are in JSON to allow easier parsing of the results by the caller of the service.
-- The testcases can be run simply by running the project as JUnit test.
+- 	The application uses a dockerized PostgreSQL database for the local development environment and H2 in-memory database  
+	as testing database.
+- 	In order to build the dockerized database, docker has to be installed in the execution machine, and the following command  
+	has to be executed from the path **/stubs/**  
+	*docker-compose up -d* -> This command will download the PostgreSQL container, set it up and start it.
+-	The application will run Flyway Migrate on startup and execute the sql statements that can be found in the paths 
+	**/src/main/resources/db/migration/postgres** and **/src/main/resources/dev_sql** for the initialization of the database.
+	Also the paths **src/test/resources/db/migration/h2** and  **/src/main/resources/test_sql** contain scripts for the 	initialization of the test database and data.
+- 	When the requests contain malformed JSON input or wrong values, the relevant errors will be returned.
+- 	The responses are in JSON to allow easier parsing of the results by the caller of the service.
+- 	The testcases can be run simply by running the project as JUnit test.
