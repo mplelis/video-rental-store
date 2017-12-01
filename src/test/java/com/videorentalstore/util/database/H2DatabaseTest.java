@@ -17,6 +17,7 @@ public abstract class H2DatabaseTest {
     private final MetricRegistry metricRegistry = new MetricRegistry();
     private final DataSourceFactory dataSourceFactory;
     private final DBI dbi;
+    private Flyway flyway;
 
     public H2DatabaseTest() {
         this.dataSourceFactory = getDataSourceFactory();
@@ -31,9 +32,6 @@ public abstract class H2DatabaseTest {
 
     @After
     public void tearDown() throws Exception {
-        Flyway flyway = new Flyway();
-        flyway.setDataSource(getDataSource());
-        flyway.setLocations("classpath:db/migration/h2","filesystem:src/test/resources/dev_sql");
         flyway.clean();
     }
 
@@ -47,14 +45,14 @@ public abstract class H2DatabaseTest {
     }
     
     protected void createH2Database(ManagedDataSource dataSource) {
-        Flyway flyway = new Flyway();
+        flyway = new Flyway();
         flyway.setDataSource(dataSource);
-        flyway.setLocations("classpath:db/migration/h2","filesystem:src/test/resources/dev_sql");
+        flyway.setLocations("filesystem:src/test/resources/db/migration/h2","filesystem:src/test/resources/test_sql");
         flyway.migrate();
     }
 
     protected ManagedDataSource getDataSource() {
-        return dataSourceFactory.build(metricRegistry, "bob");
+        return dataSourceFactory.build(metricRegistry, "");
     }
 
     protected Handle getHandle(){
