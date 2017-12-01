@@ -140,10 +140,10 @@ Otherwise, a successful creation message is returned in plain text.
 
 ### Notes
 
-- 	The application uses a dockerized PostgreSQL database for the local development environment and H2 in-memory database  
-	as testing database.
-- 	In order to build the dockerized database, docker has to be installed in the execution machine, and the following command  
-	has to be executed from the path **/stubs/**  
+- 	The application uses a dockerized PostgreSQL database for the local development environment and H2 in-memory
+	database as testing database.
+- 	In order to build the dockerized database, docker has to be installed in the execution machine, and the following 
+	command	has to be executed from the path **/stubs/**  
 	*docker-compose up -d* -> This command will download the PostgreSQL container, set it up and start it.
 -	The application will run Flyway Migrate on startup and execute the sql statements that can be found in the paths 
 	**/src/main/resources/db/migration/postgres** and **/src/main/resources/dev_sql** for the initialization of the database.
